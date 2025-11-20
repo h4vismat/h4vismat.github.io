@@ -1,86 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>h4vismat</title>
+  <meta charset="UTF-8" />
+  <title>h4vismat — developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Developer portfolio of h4vismat — systems architect, data engineer, crypto anarchist." />
+
+  <!-- Cutive Mono for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet" />
+
   <style>
+    @font-face {
+      font-family: "Mondwest";
+      src: url("PPMondwest-Regular.otf") format("opentype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #fafafa;
+      --fg: #111111;
+      --fg-muted: #555555;
+      --accent: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #fff;
-      color: #000;
-      font-family: monospace;
-      margin: 2em auto;
-      max-width: 800px;
-      line-height: 1.5;
+      margin: 0;
+      padding: 2.5rem 1.5rem 3rem;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Cutive Mono", monospace;
+      -webkit-font-smoothing: antialiased;
     }
+
     a {
-      color: blue;
-      text-decoration: none;
-    }
-    a:hover {
+      color: inherit;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
     }
-    pre {
-      background: #f0f0f0;
-      padding: 1em;
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    .name {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .role {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-lines span {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.3rem 0 0;
+    }
+
+    ul li + li {
+      margin-top: 0.2rem;
+    }
+
+    .mono-small {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+    }
+
+    .code-block {
+      margin-top: 0.75rem;
+      padding: 0.75rem 0.8rem;
+      border: 1px solid #dddddd;
+      font-family: "Mondwest", "Cutive Mono", monospace;
+      font-size: 0.85rem;
       overflow-x: auto;
-      white-space: pre-wrap;
+      background: #ffffff;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre;
+    }
+
+    .inline-label {
+      display: inline-block;
+      min-width: 4.5rem;
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+    }
+
+    .pgp {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      word-break: break-all;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: var(--fg-muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 1.2rem 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      
+      <div class="name">h4vismat</div>
+      <div class="role">lead developer @ mooze · cryptocurrency fintech</div>
+    </header>
 
-<pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡟⠈⠘⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣼⡟⠁⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡽⠋⠀⠀⠀⡰⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣄⣀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⢡⠞⠀⠀⠀⠀⣠⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠁⠀⠀⠀⠉⠉⠑⠠⣄⣀⠀⠄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡊⣠⠏⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⣧⢣⡀⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠘⢱⣿⠀⠀⠴⢫⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠻⡄⢱⢦⣤⣤⣤⡀⠀⠀⠀⢇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢠⢸⠏⢧⠠⠄⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡇⠀⠀⣍⣈⣿⡿⠿⣿⣿⣷⣔⠀⠘⡄⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡾⠀⠀⢸⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⣸⠏⢹⣿⣷⡇⠈⠙⠉⠉⣷⠀⢸⡆⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢰⠀⣿⠃⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⣿⠀⣻⣿⣿⡇⠀⠀⠀⠀⢹⠀⣬⢧⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠰⡐⣿⡀⠀⠀⣿⢅⡄⠀⠀⠀⠀⠀⠀⢀⣠⠞⠀⠀⢰⣿⣿⣿⣱⠟⠀⠀⠀⠠⠚⠀⠐⠃⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣧⣘⣧⣰⣦⡿⠭⠽⠿⠜⠛⠚⠒⡼⠋⠀⢀⣠⣶⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢾⡿⠿⣧⣿⡧⠀⠀⠀⠀⠀⠀⣠⡅⣠⣾⠿⣻⣿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⡔⠋⠀⠀⠙⠒⠃⠀⠀⠀⠀⠀⠰⣻⣿⣿⣿⠞⠁⠀⠓⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣠⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠈⢆⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⢺⡄⠀⠀⠡⠈⡆⠄⢡⣘⡆⠀⠄⠀⠀⠀⠀⠈⣟⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⣲⠃⡄⠀⠀⠀⡄⠀⢸⡎⠘⡀⠠⠤⡒⣃⣟⠉⠁⠘⠀⠸⠀⠀⠀⠀⠢⡈⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠠⢠⠇⣼⠀⠀⠀⠀⡇⠠⢸⡇⠀⣧⣰⡰⠔⢎⣡⣤⣀⣐⡃⠀⡅⠠⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢸⢠⢿⠀⡀⠀⠀⠀⢠⠘⠇⠀⠙⠁⢀⡴⠋⠁⠀⠈⢛⢆⠀⡇⠀⡄⢰⠀⢸⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢠⢸⠇⠸⠀⢣⠀⠀⢠⡸⡟⠒⠄⠀⠀⠈⠀⠀⠀⠐⠋⠁⡎⠀⣿⠀⡇⢸⠀⠸⣼⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠈⠎⠀⠀⠰⠈⢦⠀⠀⢹⡓⠒⠲⠀⠀⠀⡠⠀⠀⠀⠀⢰⠃⠀⡏⠀⡇⢸⠀⠀⡯⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢠⢈⡆⠀⠀⡟⣄⠀⠀⠐⠁⠀⠀⠀⢀⡠⢿⠀⠀⡇⠀⡅⡼⠀⠀⢇⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢙⡗⠀⠀⠀⠈⡍⠒⠢⠤⢤⡴⠚⠉⢀⡜⠀⢠⣅⣀⠃⠁⠀⠀⠈⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣾⠀⠀⠀⠀⠀⠁⡰⠊⢱⠋⠁⢀⡠⠚⢀⠀⣼⣤⡈⢳⣤⡀⠀⠀⠈⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⢀⡴⣿⠁⠀⣸⡦⠘⠁⠀⠀⣸⢠⣿⣿⣴⣾⣿⣿⢦⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⠎⠀⠀⠀⠘⣯⠀⡼⢠⡎⠉⡇⠀⣀⢴⢾⠁⢸⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠈⢦⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢠⠊⠀⠀⠀⢰⣼⠟⣷⡇⢸⣇⣠⣧⠚⣱⠃⣿⠀⣾⣿⣿⣿⣿⣿⡿⣻⣿⡆⠀⠀⠀⠀⠱⣄⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⠃⠀⠀⠀⢠⢻⣏⣤⣹⡧⠚⠛⡷⠀⢠⣣⡞⠻⠀⣿⣿⣿⣿⣿⣿⢳⣿⣿⣿⡀⠀⢀⠀⠀⠘⢤⠀⠀⠀⠀⠀
-⠀⡠⠰⠃⠀⠀⠀⢀⣾⣾⣿⣿⣿⡇⠀⢀⡇⡰⢣⣷⣤⣴⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⢷⡀⠀⢆⠀⠀⠀⠑⢤⠀⠀⠀
-⢠⠃⠀⠀⠀⠀⠀⡜⣼⣿⣿⣿⣿⣷⡴⠋⣀⣼⣿⣿⡟⠛⠀⠟⠿⢿⣿⣿⣿⣿⣿⣿⣿⡟⣷⠀⠈⠆⠀⠀⠀⢌⠱⡐⢄
-⢸⠀⠀⠀⠀⠀⠠⣷⣿⣿⣿⣿⣿⣥⣴⣾⣿⣿⠟⠻⣷⣶⣶⣤⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠀⠀⠈⠄⠠⠀⠀⢦⠑⢾
-</pre>
+    <main>
+      <section aria-labelledby="about-heading">
+        <div id="about-heading" class="section-title">about</div>
+        <div class="about-lines">
+          <span>systems architect. data engineer. crypto anarchist.</span>
+          <span>fluent in rust, python, and dart. tinkering with elixir rn.</span>
+        </div>
+      </section>
 
-<h1>h4vismat</h1>
-<p>data engineer. systems architect. crypto anarchist. building mooze.app<br>
-   fluent in rust, python, and dart. tinkering with elixir rn.</p>
+      <section aria-labelledby="work-heading">
+        <div id="work-heading" class="section-title">current work</div>
+        <p>
+          lead developer at <strong>mooze</strong> (<a href="https://github.com/mooze-labs" target="_blank" rel="noreferrer">github.com/mooze-labs</a>),
+          a cryptocurrency fintech company.
+          i design and maintain the systems that move value between fiat rails and
+          the crypto ecosystem, with a focus on correctness, observability, and
+          simplicity.
+        </p>
+        <ul>
+          <li><span class="inline-label">stack</span>rust, dart, python, terraform, aws, simplicityHL</li>
+        </ul>
+      </section>
 
-<h2>social</h2>
-<ul>
-  <li><a href="https://github.com/h4vismat">github.com/h4vismat</a></li>
-  <li><a href="https://x.com/h4vismat">x.com/h4vismat</a></li>
-  <li><a href="mailto:h4vismat@pm.me">h4vismat@pm.me</a></li>
-</ul>
+      
 
-<h2>pgp</h2>
-<p>my public key:</p>
-<pre>
-3A2E9BF5637F81A2402162FBF118DA633E261857
-</pre>
-<hr>
-<p>no js. no cookies. no surveillance.<br>
-   hosted with <a href="https://pages.github.com/">github pages</a>.</p>
+      <section aria-labelledby="previous-heading">
+        <div id="previous-heading" class="section-title">previous roles</div>
+        <p><strong>data engineer @ tivit</strong> (aug 2023 – apr 2025)<br>
+        built data pipelines for fraud detection on health insurance documents.
+        used aws lambda, sqs, sns, textract, terraform, python.
+        responsible for designing the poc, first production iteration, and
+        aws dms migrations (mysql → aurora postgres + babelfish).</p>
+        <p><strong>data engineer @ nutrien</strong> (aug 2022 – aug 2023)<br>
+        built pipelines to transform raw operational data into analytics-ready
+        datasets for business teams. used python, spark, delta, aws glue,
+        athena, redshift, etc.</p>
+        
+      </section>
 
+      <section aria-labelledby="certs-heading">
+        <div id="certs-heading" class="section-title">certifications</div>
+        <ul>
+          <li>aws certified data engineer</li>
+          <li>aws certified solutions architect – associate</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="contact-heading">
+        <div id="contact-heading" class="section-title">contact</div>
+        <ul>
+          <li><span class="inline-label">github</span><a href="https://github.com/h4vismat" target="_blank" rel="noreferrer">github.com/h4vismat</a></li>
+          <li><span class="inline-label">x</span><a href="https://x.com/h4vismat" target="_blank" rel="noreferrer">x.com/h4vismat</a></li>
+          <li><span class="inline-label">email</span><a href="mailto:h4vismat@pm.me">h4vismat@pm.me</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="pgp-heading">
+        <div id="pgp-heading" class="section-title">pgp</div>
+        <div class="mono-small">public key id / fingerprint:</div>
+        <div class="pgp">3A2E9BF5637F81A2402162FBF118DA633E261857</div>
+      </section>
+
+      
+
+    </main>
+
+    <footer>
+      plain html. no widgets. just the facts.
+    </footer>
+  </div>
 </body>
 </html>
