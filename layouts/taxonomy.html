@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header class="page-heading">
+  <h1>{{ .Title }}</h1>
+  <p class="muted">A few ways into the writing.</p>
+</header>
+{{ if .Data.Terms }}
+<ul class="tag-index">
+  {{ range .Data.Terms.Alphabetical }}
+  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a><span>{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</span></li>
+  {{ end }}
+</ul>
+{{ else }}
+<p class="empty-state">Tags will appear here with the first tagged post.</p>
+{{ end }}
+<p class="back-link"><a href="{{ (site.GetPage "/writing").RelPermalink }}">← all writing</a></p>
+{{ end }}

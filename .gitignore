@@ -1,0 +1,6 @@
+/docs/superpowers/
+/public/
+/resources/
+/.hugo_build.lock
+/.tools/
+__pycache__/

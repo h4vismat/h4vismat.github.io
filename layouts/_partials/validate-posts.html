@@ -1,0 +1,8 @@
+{{- range where .RegularPages "Section" "writing" -}}
+  {{- if not (strings.TrimSpace .Title) -}}
+    {{- errorf "Post %s requires a nonempty title" .File.Path -}}
+  {{- end -}}
+  {{- if .Date.IsZero -}}
+    {{- errorf "Post %s requires an explicit date" .File.Path -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,67 @@
+name: Build and publish blog
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install pinned Hugo
+        shell: bash
+        run: |
+          set -euo pipefail
+          HUGO_VERSION="$(cat .hugo-version)"
+          archive="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          release="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}"
+          tool_dir="${RUNNER_TEMP}/hugo"
+          mkdir -p "$tool_dir"
+          curl --fail --silent --show-error --location --retry 3 "$release/$archive" -o "$tool_dir/$archive"
+          curl --fail --silent --show-error --location --retry 3 "$release/hugo_${HUGO_VERSION}_checksums.txt" -o "$tool_dir/checksums.txt"
+          cd "$tool_dir"
+          awk -v name="$archive" '$2 == name { print }' checksums.txt | sha256sum --check --strict
+          tar -xzf "$archive" hugo
+          echo "$tool_dir" >> "$GITHUB_PATH"
+
+      - name: Verify publication rules
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Build production site
+        run: hugo --minify --panicOnWarning
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+          include-hidden-files: true
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

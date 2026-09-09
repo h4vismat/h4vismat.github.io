@@ -1,0 +1,5 @@
+{{ define "main" }}
+<header class="page-heading"><p class="eyebrow">404</p><h1>page not found</h1></header>
+<p>This page may have moved, or the link may be incomplete.</p>
+<p><a href="{{ site.Home.RelPermalink }}">Head home</a> or <a href="{{ (site.GetPage "/writing").RelPermalink }}">browse the writing</a>.</p>
+{{ end }}
