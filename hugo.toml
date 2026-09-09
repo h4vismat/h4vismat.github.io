@@ -1,0 +1,37 @@
+baseURL = 'https://h4vismat.github.io/'
+title = 'lucca godoy'
+locale = 'en'
+timeZone = 'America/Fortaleza'
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+capitalizeListTitles = false
+cleanDestinationDir = true
+
+[params]
+  description = 'A personal blog by Lucca Godoy. Essays, notes, and things worth thinking about.'
+  mainSections = ['writing']
+
+[taxonomies]
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS']
+  page = ['HTML']
+  section = ['HTML']
+  taxonomy = ['HTML']
+  term = ['HTML']
+
+[markup]
+  [markup.highlight]
+    style = 'friendly'
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = false
+  [markup.goldmark.renderHooks.link]
+    useEmbedded = 'always'
+  [markup.goldmark.renderHooks.image]
+    useEmbedded = 'always'
+
+[sitemap]
+  filename = 'sitemap.xml'

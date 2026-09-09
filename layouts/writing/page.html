@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article>
+  <header class="page-heading">
+    <p class="post-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January 2006" }}</time>{{ if .Draft }} <span class="draft-label">draft preview</span>{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .GetTerms "tags" }}
+    <ul class="post-tags" aria-label="Tags">
+      {{ range . }}<li><a href="{{ .RelPermalink }}" rel="tag">{{ .LinkTitle }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <p class="back-link"><a href="{{ (site.GetPage "/writing").RelPermalink }}">← all writing</a></p>
+</article>
+{{ end }}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+<header class="page-heading">
+  <h1>{{ .Title }}</h1>
+  <p class="muted">Essays and notes, newest first. <a href="{{ (site.GetPage "/tags").RelPermalink }}">Browse by tag →</a></p>
+</header>
+{{ partial "post-list.html" .RegularPages.ByDate.Reverse }}
+{{ end }}

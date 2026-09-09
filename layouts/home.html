@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="introduction" aria-labelledby="intro-title">
+  <h1 id="intro-title">{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  <a class="quiet-link" href="{{ (site.GetPage "/about").RelPermalink }}">a little about me →</a>
+</section>
+<section aria-labelledby="latest-heading">
+  <div class="section-heading">
+    <h2 id="latest-heading" class="eyebrow">latest writing</h2>
+    <a href="{{ (site.GetPage "/writing").RelPermalink }}">all writing →</a>
+  </div>
+  {{ partial "post-list.html" (first 5 (where site.RegularPages "Section" "writing").ByDate.Reverse) }}
+</section>
+{{ end }}

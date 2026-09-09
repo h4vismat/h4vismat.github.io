@@ -1,0 +1,12 @@
+{{ if . }}
+<ul class="post-list">
+  {{ range . }}
+  <li>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+    <div><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if .Draft }} <span class="draft-label">draft</span>{{ end }}</div>
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p class="empty-state">No posts yet. Check back soon.</p>
+{{ end }}
